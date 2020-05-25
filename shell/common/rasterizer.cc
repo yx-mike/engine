@@ -68,7 +68,6 @@ void Rasterizer::Setup(std::unique_ptr<Surface> surface) {
   compositor_context_->OnGrContextCreated();
     
   if (!surface_) {
-    FML_DLOG(INFO) << "yx02: Rasterizer::Setup called with no surface.";
     return;
   }
     
