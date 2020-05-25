@@ -66,6 +66,12 @@ void Rasterizer::Setup(std::unique_ptr<Surface> surface) {
                              user_override_resource_cache_bytes_);
   }
   compositor_context_->OnGrContextCreated();
+    
+  if (!surface_) {
+    FML_DLOG(INFO) << "yx02: Rasterizer::Setup called with no surface.";
+    return;
+  }
+    
   if (surface_->GetExternalViewEmbedder()) {
     const auto platform_id =
         task_runners_.GetPlatformTaskRunner()->GetTaskQueueId();
