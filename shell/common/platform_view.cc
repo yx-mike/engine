@@ -74,11 +74,6 @@ void PlatformView::NotifyCreated() {
         latch.Signal();
       });
   latch.Wait();
-    
-  if (!surface) {
-    return;
-  }
-
   delegate_.OnPlatformViewCreated(std::move(surface));
 }
 
